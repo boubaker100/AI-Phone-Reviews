@@ -17,7 +17,10 @@ export const interSans = Inter({
 
 export const metadata: Metadata = {
   title: "AI-PhoneReview",
-  description: "creat phone mobile reviews by AI"
+  description: "creat phone mobile reviews by AI",
+   icons: {
+    icon: "/favicon.ico",
+  },
 };
 
 export default function RootLayout({

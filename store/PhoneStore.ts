@@ -1,5 +1,4 @@
 import { create } from "zustand";
-import { persist } from "zustand/middleware";
 
 interface PhoneState {
   phone: {
@@ -12,20 +11,13 @@ interface PhoneState {
   setVideo: (data: any) => void;
 }
 
-export const usePhoneStore = create<PhoneState>()(
-  persist(
-    (set) => ({
-      phone: null,
-      video: null,
+export const usePhoneStore = create<PhoneState>((set) => ({
+  phone: null,
+  video: null,
 
-      setPhone: (data) => set({ phone: data }),
+  setPhone: (data) => set({ phone: data }),
 
-      resetPhone: () => set({ phone: null, video: null }),
+  resetPhone: () => set({ phone: null, video: null }),
 
-      setVideo: (data) => set({ video: data }),
-    }),
-    {
-      name: "phone-storage", 
-    }
-  )
-);
+  setVideo: (data) => set({ video: data }),
+}));

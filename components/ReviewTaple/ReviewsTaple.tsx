@@ -6,7 +6,7 @@ import {
   BatteryCharging, Camera, Cpu, Monitor, ShoppingCart, Globe, Wifi, HardDrive, Shield, Weight, Ruler, DollarSign, CpuIcon,
   Palette,
   CloudLightning,
-  
+
 } from "lucide-react";
 import VideoReview from "./VideoReview";
 import PhoneSummary from "./PhoneSummary";
@@ -14,15 +14,6 @@ import { useRouter } from "next/navigation";
 
 export default function PhoneSpecsTable() {
   const phoneProp = usePhoneStore((state) => state.phone);
-  const router = useRouter();
-
-  if (!phoneProp?.name) return;
-
- router.push(`/?phone=${encodeURIComponent(phoneProp.name)}`);
-
-
-router.push(`/?phone=${encodeURIComponent(phoneProp.name || "")}`);
-
 
 
   if (!phoneProp || !phoneProp.name || phoneProp.name.trim() === "") return null;
